@@ -79,6 +79,12 @@ namespace jsiSIE
                     continue;
                 }
 
+                if (c == '"')
+                {
+
+                    var test = c;
+                }
+
                 if (c == '"' && !isInObject)
                 {
                     isInField += 1;
@@ -200,7 +206,7 @@ namespace jsiSIE
             {
                 if (i.Trim().StartsWith("{"))
                 {
-                    data = i.Trim().Replace("{", "").Replace("}","");
+                    data = i.Trim().Replace("{", "").Replace("}","").Replace("\"\"","\" \"");
                     break;
                 }
             }
